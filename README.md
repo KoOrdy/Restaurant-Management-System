@@ -1,82 +1,87 @@
+
 # 🍽️ Restaurant Management System — Full Stack
 
-A complete restaurant management platform built with React (Frontend), .NET Web API (Backend), and FastAPI (AI Microservice). The system supports multi-role access (Admin, Restaurant Manager, Customer) and uses an AI-powered summarization service for customer reviews.
+A complete restaurant management platform built with **React (Frontend)**, **.NET Web API (Backend)**, and **FastAPI (AI Microservice)**. The system supports multi-role access (Admin, Restaurant Manager, Customer) and uses an **AI-powered summarization service** for customer reviews.
 
 ---
 
 ## 🔧 Technologies Used
 
-- 🧠 AI: FastAPI + Hugging Face (`facebook/bart-large-cnn`)
-- 🖥️ Frontend: React.js, React Router, Context API
-- ⚙️ Backend: .NET 8 Web API, EF Core, JWT, Role-based Auth, SMTP, SignalR (WebSocket)
-- 🛢️ Database: SQL Server
-- 🧪 Testing: Swagger / Postman
-- 📡 Communication: REST API, WebSocket
-- 🛡️ Security: JWT + Role-based Authorization
+- 🧠 **AI**: FastAPI + Hugging Face `facebook/bart-large-cnn`
+- 🖥️ **Frontend**: React.js, React Router, Context API
+- ⚙️ **Backend**: .NET 8 Web API, EF Core, JWT, Role-based Auth, SMTP, SignalR (WebSocket)
+- 🛢️ **Database**: SQL Server
+- 🧪 **Testing**: Swagger / Postman
+- 📡 **Communication**: REST API, WebSocket
+- 🛡️ **Security**: JWT + Role-based Authorization
 
 ---
 
-## 👤 System Roles & Features
+## 👥 System Roles & Features
 
-### Admin
-- Login/Logout
-- Approve / reject / manage restaurants
-- CRUD categories (Appetizers, Main Course…)
-- Manage reservations and orders
-- Handle customer support
+### 👤 Admin
+- Login / Logout  
+- Approve / Reject / Manage restaurant accounts  
+- CRUD food categories (Appetizers, Main Course, etc.)  
+- Manage reservations and orders  
+- Handle customer support requests  
 
-### Restaurant Manager
-- Login/Logout
-- Manage menu (CRUD items)
-- View, accept, reject orders & reservations
-- Monitor seating capacity
+### 👨‍🍳 Restaurant Manager
+- Login / Logout  
+- CRUD menu items (name, price, description, availability)  
+- View, accept, reject orders & table reservations  
+- Monitor seating capacity  
 
-### Customer
-- Register/Login/Logout
-- Browse menus & search dishes
-- Place and track orders
-- Book/reschedule/cancel table reservations
-- Submit reviews & ratings
+### 🍴 Customer
+- Register / Login / Logout  
+- Browse restaurant menus and search for dishes  
+- Place, track, or cancel orders  
+- Book, reschedule, or cancel table reservations  
+- Leave reviews and rate food/services  
 
 ---
 
-## 🧠 AI Review Summarization (Microservice)
+## 🧠 AI Review Summarization Microservice
 
-Built with FastAPI and uses `facebook/bart-large-cnn` to summarize reviews.
+Built with **FastAPI** and powered by `facebook/bart-large-cnn` for generating concise summaries of customer reviews.
 
-# Clone
+### ⚙️ Setup
+
+```bash
 git clone https://github.com/Mohamed-0-Turki/restaurant-review-summarizer.git
 cd restaurant-review-summarizer
 
-# Virtual Environment
+# Create virtual environment
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate   # Windows: venv\Scripts\activate
 
-# Install
+# Install dependencies
 pip install fastapi uvicorn transformers torch
 
-# Run
+# Run server
 uvicorn main:app --reload
+````
 
-Docs:
+### 📄 Docs
 
-Swagger: http://localhost:8000/docs
+* Swagger UI: [http://localhost:8000/docs](http://localhost:8000/docs)
+* ReDoc: [http://localhost:8000/redoc](http://localhost:8000/redoc)
 
-ReDoc: http://localhost:8000/redoc
+---
 
-🧩 React Frontend Setup
-# Clone
+## 🧩 React Frontend Setup
+
+```bash
 git clone https://github.com/Mohamed-0-Turki/restaurant-management-system.git
 cd restaurant-management-system
 
-# Install deps
 npm install
-
-# Run development server
 npm run dev
+```
 
-📁 Frontend Structure
+### 📁 Folder Structure
 
+```
 ├── public
 ├── src
 │   ├── assets
@@ -89,48 +94,75 @@ npm run dev
 │   ├── utils
 │   ├── validation
 │   └── main.jsx
+```
 
-⚙️ .NET Backend Setup
-Prerequisites:
-.NET 8 SDK
+---
 
-SQL Server running
+## ⚙️ .NET Backend Setup
 
-SMTP credentials for mail
+### Prerequisites
 
-JWT Secret in appsettings
+* .NET 8 SDK
+* SQL Server running
+* SMTP credentials for emails
+* JWT Secret configured
 
-# 1. Clone the backend project
+### Setup
+
+```bash
 git clone https://github.com/YOUR_NAME/restaurant-api.git
 cd restaurant-api
 
-# 2. Configure connection string + JWT + SMTP in appsettings.json
+# Configure `appsettings.json`:
+# - ConnectionStrings.DefaultConnection
+# - JWT: Secret
+# - SMTP: Host, Port, User, Pass
+# - AIService: BaseUrl
 
-# 3. Apply EF Core migrations (if using)
+# Apply database migrations
 dotnet ef database update
 
-# 4. Run the server
+# Run server
 dotnet run
+```
 
+### 🔗 Swagger Docs
 
-🧪 API Docs
-Once running:
+[http://localhost:5135/swagger/index.html](http://localhost:5135/swagger/index.html)
 
-Swagger: http://localhost:5135/swagger/index.html
+---
 
+## 🌐 Environment Variables
 
-📡 Environment Variables
-Create .env or set variables for:
+Ensure the following are set:
 
-JWT_SECRET
+```
+JWT_SECRET=your_jwt_secret
+SMTP_USER=your_email_user
+SMTP_PASS=your_email_password
+AI_SERVICE_URL=http://localhost:8000
+```
 
-SMTP_USER
+---
 
-SMTP_PASS
+## 🔄 Real-Time Features (SignalR)
 
-AI_SERVICE_URL (e.g., http://localhost:8000)
+* Live chat between **Customer** and **Manager**
+* Real-time updates for order status (Pending → Preparing → Ready → Delivered)
 
-🔄 Real-Time Support (SignalR)
-WebSocket for chat and live order status (Customer ↔ Manager)
+---
+
+## 🧪 Future Enhancements
+
+* Multi-language support
+* Mobile responsive UI
+* Admin analytics dashboard
+* Push/email notifications
+
+---
+
+## 🤝 Contribution
+
+Feel free to fork, improve, and send pull requests. Contributions are more than welcome!
 
 
