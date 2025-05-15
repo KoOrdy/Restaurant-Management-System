@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+/* Custom active styles for the NavLink */
+.active {
+  color: #EF5B20;
+  border-bottom: 2px solid #EF5B20;
+  padding-bottom: 0.25rem;
+  border-radius: 0; /* Remove border radius when active */
+}
+
+
+/* Force scrollbar to overlay instead of taking space */
+html {
+  overflow-y: overlay;
+  overflow-x: hidden;
+}
+
+/* WebKit Browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 5px; /* Reduce width */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626; /* Scrollbar color */
+  border-radius: 3px; /* Rounded edges */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A61B2B; /* Darker on hover */
+}
+
+/* Remove default calendar icon (Chrome, Safari, Edge, Opera) */
+input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Remove default calendar icon (Firefox) */
+input[type="date"]::-moz-calendar-picker-indicator {
+  display: none;
+}
+
+/* Remove default password visibility toggle (Chrome, Edge) */
+input[type="password"]::-ms-reveal,
+input[type="password"]::-webkit-textfield-decoration-container {
+  display: none;
+}
+
+
+/* Remove default clock icon (Chrome, Safari, Edge, Opera) */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+/* Remove default clock icon (Firefox) */
+input[type="time"]::-moz-calendar-picker-indicator {
+  display: none;
+}

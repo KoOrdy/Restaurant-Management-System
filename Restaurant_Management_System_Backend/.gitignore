@@ -1,0 +1,23 @@
+# Build results
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.pdb
+*.exe
+*.dll
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# Other
+*.log
+
+
+# Ignore all content in wwwroot except the folder itself
+wwwroot/*
+!wwwroot/.gitkeep

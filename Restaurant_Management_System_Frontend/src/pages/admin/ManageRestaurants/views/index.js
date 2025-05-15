@@ -1,0 +1,5 @@
+export { default as DeleteRestaurantPopup } from "./DeleteRestaurantPopup"
+export { default as AddRestaurantPopup } from "./AddRestaurantPopup"
+export { default as ShowRestaurantPopup } from "./ShowRestaurantPopup"
+export { default as ApproveRejectRestaurantPopup } from "./ApproveRejectRestaurantPopup"
+export { default as EditRestaurantPopup } from "./EditRestaurantPopup"
