@@ -7,9 +7,9 @@ namespace resturantApi.SMTP
     {
         public static void SendEmail(string toEmail, string subject, string body)
         {
-            var fromAddress = new MailAddress("yheiaelkordy@gmail.com", "Restaurant Management System");
+            var fromAddress = new MailAddress("Your Email here", "Restaurant Management System");
             var toAddress = new MailAddress(toEmail);
-            const string fromPassword = "snoc aqls qggq admm"; 
+            const string fromPassword = "Your passkey here"; 
             
             var smtp = new SmtpClient
             {
